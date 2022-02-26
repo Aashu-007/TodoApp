@@ -1,5 +1,5 @@
 import "./App.css";
-import {TextField, Button} from "@mui/material";
+import {TextField, Button, Container, Typography} from "@mui/material";
 import { useState, useEffect } from "react";
 import { db } from "./Firebase";
 import firebase from "firebase";
@@ -38,6 +38,7 @@ function App() {
 
   return (
     <div className="App">
+    <Container disableGutters maxWidth="10">
       <div
         style={{
           display: "flex",
@@ -46,8 +47,8 @@ function App() {
           alignItems: "center",
         }}
       >
-        <h1 style={{fontSize:38,margin:5,color:"#2c3e50"}}>Nirmal's Todo App</h1>
-        <form action="" autocomplete="off">
+        <Typography variant="h3" sx={{fontWeight:"bold",fontSize:"2.5rem",mt:4}} color="primary">Nirmal's Todo App</Typography>
+        <form action="" autoComplete="off">
           <TextField
             id="standard-basic"
             label="Enter your task..."
@@ -71,9 +72,11 @@ function App() {
             todo={todo.todo}
             inprogress={todo.inprogress}
             id={todo.id}
+            key={todo.id}
           />
         ))}
       </div>
+      </Container>
     </div>
   );
 }

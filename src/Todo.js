@@ -24,8 +24,10 @@ export default function TodoListItem({ todo, inprogress, id }) {
 				<ListItem sx={{ color: "#2c3e50" }}>
 					<ListItemText
 						primary={
-							<Typography variant="h3" sx={{ fontSize: "18px" }}>
-								{todo}
+							<Typography variant="h1" color ="text.primary" sx={{ fontSize: "18px" }}>
+								{inprogress ? <>{todo}</> : <s>{todo}</s> 
+								
+								}
 							</Typography>
 						}
 						secondary={
